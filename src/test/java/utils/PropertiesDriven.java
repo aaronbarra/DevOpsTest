@@ -10,7 +10,7 @@ public class PropertiesDriven {
 
     public static String getProperty(String key){
         props = new Properties();
-        String rutaFile = "/home/aaron.araya94/Descargas/untitled/src/test/resources/Properties.properties";
+        String rutaFile = "https://github.com/aaronbarra/DevOpsTest/blob/0b750faccce04792f0ba9ad5467397913c2edb14/src/test/resources/Properties.properties";
         try {
             InputStream input = new FileInputStream(rutaFile);
             props.load(input);
