@@ -1,6 +1,7 @@
 package test;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -33,6 +34,8 @@ public class TestCases {
 
         homePage.resultadoValorDolar();
         homePage.createLogs(dia,estadoMercado,hora,valorDolar);
+        Assert.assertTrue(!valorDolar.isEmpty());
+        driver.close();
     }
 
 
