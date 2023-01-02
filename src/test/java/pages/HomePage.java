@@ -15,9 +15,11 @@ import utils.BaseClass;
 import utils.PropertiesDriven;
 
 import java.io.*;
+import java.nio.channels.ScatteringByteChannel;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 public class HomePage extends BaseClass {
@@ -29,7 +31,7 @@ public class HomePage extends BaseClass {
     By locatorValorDolar = By.xpath("//span[@class='text-2xl']");
     By locatorDiaDolar = By.xpath("//time[1][@class]");
     By locatorTituloPeso = By.xpath("//h1[contains(text(),'chileno')]");
-    By locatorEstadoMercado= By.xpath("//span[2][contains(text(),'Mercado')]");
+    By locatorEstadoMercado= By.xpath("//span[2][contains(text(),'real')]");
 
 
 
@@ -51,10 +53,15 @@ public class HomePage extends BaseClass {
         String datetime = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm").format(LocalDateTime.now());
         return datetime;
     }
-    public String estadoMercado(){
-        WebElement estado= driver.findElement(locatorEstadoMercado);
-        String est = estado.getText();
-        return est;
+    public String estadoMercado() {
+        try{
+            WebElement estadoMercado= driver.findElement(locatorEstadoMercado);
+            String estado= estadoMercado.getText();
+            return estado;
+        } catch(Exception e){
+            String estado = "Mercado cerrado";
+            return estado;
+        }
     }
 
     public String resultadoValorDolar() {

@@ -10,5 +10,8 @@
         <module name="JavaMavenJenkins" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DevOpsTest" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

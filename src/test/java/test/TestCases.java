@@ -35,7 +35,7 @@ public class TestCases {
         homePage.resultadoValorDolar();
         homePage.createLogs(dia,estadoMercado,hora,valorDolar);
         Assert.assertTrue(!valorDolar.isEmpty());
-        driver.close();
+        homePage.closeBrowser();
     }
 
 

@@ -4,7 +4,9 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class PropertiesDriven {
+public class
+
+PropertiesDriven {
 
     public static Properties props;
 
