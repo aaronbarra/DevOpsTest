@@ -144,12 +144,10 @@ public class HomePage extends BaseClass {
             if (excel.getSheetName(i).equalsIgnoreCase(PropertiesDriven.getProperty("sheet"))) {
                 sheet = excel.getSheetAt(i);
                 int nrows = sheet.getLastRowNum();
-                System.out.println(nrows);
                 ArrayList<DatosDolar> datos = new ArrayList<>();
                 datos.add(new DatosDolar(dia, estadoMercado, hora, valor));
                 int rowIndex = nrows + 1;
                 Row row = sheet.createRow(rowIndex);
-                System.out.println(sheet.getPhysicalNumberOfRows());
                 for (int v = 0; v < datos.size(); v++) {
                     row = sheet.createRow(rowIndex);
                     DatosDolar datosDolar = datos.get(v);
