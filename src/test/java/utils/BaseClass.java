@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -42,7 +43,7 @@ public class BaseClass {
         switch (browser){
             case "CHROME":
                 System.setProperty(propertyDriver,rutaDriver);
-                this.driver = new ChromeDriver();
+                this.driver = new ChromeDriver(new ChromeDriverService.Builder().usingPort(65535).build());
                 return this.driver;
             case "EDGE":
                 System.setProperty(propertyDriver,rutaDriver);
