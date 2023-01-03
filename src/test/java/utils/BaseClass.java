@@ -42,7 +42,7 @@ public class BaseClass {
     public WebDriver conexionBrowser(String browser,String propertyDriver,String rutaDriver){
         switch (browser){
             case "CHROME":
-                System.setProperty(propertyDriver,rutaDriver);
+                System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
                 this.driver = new ChromeDriver(new ChromeDriverService.Builder().usingPort(65535).build());
                 return this.driver;
             case "EDGE":
