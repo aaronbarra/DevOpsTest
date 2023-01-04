@@ -22,7 +22,7 @@ public class TestCases {
 
     @BeforeMethod
     public void preparacionTest(){
-        System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
         driver = new ChromeDriver();
         homePage = new HomePage(driver);
         homePage.goToPage(url);
