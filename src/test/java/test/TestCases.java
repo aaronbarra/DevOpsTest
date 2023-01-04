@@ -1,6 +1,10 @@
 package test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chromium.ChromiumDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -18,8 +22,9 @@ public class TestCases {
 
     @BeforeMethod
     public void preparacionTest(){
+        System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+        driver = new ChromeDriver();
         homePage = new HomePage(driver);
-        homePage.conexionBrowser(browser,propertyDriver,urlDriver);
         homePage.goToPage(url);
         homePage.maxBrowser();
     }

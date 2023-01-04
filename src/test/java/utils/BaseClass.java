@@ -1,5 +1,6 @@
 package utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -42,7 +43,7 @@ public class BaseClass {
     public WebDriver conexionBrowser(String browser,String propertyDriver,String rutaDriver){
         switch (browser){
             case "CHROME":
-                System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver.exe");
                 this.driver = new ChromeDriver();
                 return this.driver;
             case "EDGE":
@@ -51,7 +52,7 @@ public class BaseClass {
                 return this.driver;
             case "FIREFOX":
                 System.setProperty(propertyDriver,rutaDriver);
-                this.driver =  new FirefoxDriver();
+                this.driver = new FirefoxDriver();
                 return this.driver;
             default:
                 this.driver = null;
