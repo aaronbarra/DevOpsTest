@@ -22,9 +22,8 @@ public class TestCases {
 
     @BeforeMethod
     public void preparacionTest(){
-        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
-        driver = new ChromeDriver();
         homePage = new HomePage(driver);
+        homePage.conexionBrowser(browser,propertyDriver,urlDriver);
         homePage.goToPage(url);
         homePage.maxBrowser();
     }
