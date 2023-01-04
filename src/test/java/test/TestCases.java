@@ -22,7 +22,6 @@ public class TestCases {
         homePage.conexionBrowser(browser,propertyDriver,urlDriver);
         homePage.goToPage(url);
         homePage.maxBrowser();
-
     }
     @Test
     public void CP001_ObtenerValorDolar_DiaHora(){
@@ -37,8 +36,4 @@ public class TestCases {
         Assert.assertTrue(!valorDolar.isEmpty());
         homePage.closeBrowser();
     }
-
-
-
-
 }
